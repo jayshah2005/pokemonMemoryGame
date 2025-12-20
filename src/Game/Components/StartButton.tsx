@@ -1,4 +1,4 @@
-import "./StartButton.css"
+import "./Components.css"
 import pokeballImg from "../../assets/images/pokeball.png"
 
 export function StartButton() {

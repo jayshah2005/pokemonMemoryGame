@@ -1,0 +1,29 @@
+h1{
+    display: inline-block;
+    background-color: var(--background-color);
+    padding: 10px 20px;
+}
+
+#region_screen{
+    display: flex;
+    flex-direction: column;
+
+    width: inherit;
+    height: inherit;
+
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center; /** Center text inside div with inline block display **/
+}
+
+#regions{
+    display: grid;
+    gap: 20px;
+
+    grid-template-rows: repeat(2, 10rem);
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+
+    place-items: center;
+
+    width: inherit;
+}

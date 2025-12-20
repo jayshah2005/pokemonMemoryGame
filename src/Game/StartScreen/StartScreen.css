@@ -14,10 +14,10 @@
 #start_instructions{
     display: inline-block;
     padding: 20px;  
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--background-color);
 }
 
-img{
+#pokemonHeaderDiv img{
     width: 600px;
 }
 

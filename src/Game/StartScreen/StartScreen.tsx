@@ -1,10 +1,14 @@
 import "./StartScreen.css"
 import pokemonHeader from "./../../assets/images/pokemon_header.png";
+import { CurrentPage } from "../../global";
 
-export function StartScreen(){
+export function StartScreen({ setPage }){
     return(
-        <div id="start_screen">
-            <div id="img">
+        <div 
+            id="start_screen" 
+            onClick={() => {setPage(CurrentPage.REGION_SCREEN)}}
+            >
+            <div id="pokemonHeaderDiv">
                 <img src={pokemonHeader} alt="" />
             </div>
             <div id="start_instructions">
