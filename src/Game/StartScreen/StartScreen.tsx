@@ -6,7 +6,7 @@ export function StartScreen({ setPage }){
     return(
         <div 
             id="start_screen" 
-            onClick={() => {setPage(CurrentPage.REGION_SCREEN)}}
+            onClick={handleClick}
             >
             <div id="pokemonHeaderDiv">
                 <img src={pokemonHeader} alt="" />
@@ -20,4 +20,10 @@ export function StartScreen({ setPage }){
             </div>
         </div>
     )
+
+    function handleClick(e) {
+        e.target.className = "fade-out";
+        setTimeout(() => {}, 600);
+        setPage(CurrentPage.REGION_SCREEN);
+    }
 }

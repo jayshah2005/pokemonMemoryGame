@@ -5,7 +5,7 @@ import { regions } from "../../global";
 
 export function RegionScreen() {
     return (
-        <div id="region_screen">
+        <div id="region_screen" className="fade-in"> 
             <h1>Pick your regions</h1>
             <div id="regions">
 
