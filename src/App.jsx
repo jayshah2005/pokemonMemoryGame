@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Game } from './Game/Game'
+import "./index.css"
 import './App.css'
 import "./index.css"
 

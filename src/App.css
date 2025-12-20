@@ -5,6 +5,10 @@
   font-style: normal;
 }
 
+body, button{
+  cursor: var(--pokeball);
+}
+
 html, body {
   margin: 0;
   padding: 0;
