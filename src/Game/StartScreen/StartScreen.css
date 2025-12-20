@@ -1,0 +1,30 @@
+#start_screen{
+    width: inherit;
+    height: inherit;
+
+    align-content: center;
+    justify-items: center; /** Center img container **/
+    text-align: center; /** Center text inside div with inline block display **/
+}
+
+#Game{
+    grid-template-rows: auto 1fr;
+}
+
+#start_instructions{
+    display: inline-block;
+    padding: 20px;  
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+img{
+    width: 600px;
+}
+
+@keyframes blinker {
+  50% { opacity: 0; } /* Makes it invisible at half-way point */
+}
+
+.blinking-text {
+  animation: blinker 1s linear infinite; /* 1s duration, repeats forever */
+}

@@ -1,16 +1,38 @@
-# React + Vite
+# Architecture
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Start Screen
 
-Currently, two official plugins are available:
+A place to start the screen. Players can pick from different regions to play in.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+All the regions are available at: 
+https://pokeapi.co/api/v2/region
 
-## React Compiler
+region.pokedexes[0].url
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+We can get id's of pokemon from a given region from the region's pokedex.
+https://pokeapi.co/api/v2/pokedex/{id}/
 
-## Expanding the ESLint configuration
+Lastly, we get information about the pokemon:
+https://pokeapi.co/api/v2/pokemon/{id or name}/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+sprites = pokemon.sprites
+sprite = sprites.other.dream_world.front_default
+
+## Game Manager
+
+This is responsible for managing the logic for the game. It calls the API for images and passes it to the Game component to update the memory cards.
+
+## Game
+
+This displays the game to the user. It is responsible for managing all the changes across the DOM
+
+## Components
+
+- Card Model
+- Timer Component
+- Header
+
+## Utility Functions
+
+- API Call
+A function to call the poke
