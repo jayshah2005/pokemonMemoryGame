@@ -36,3 +36,11 @@ This displays the game to the user. It is responsible for managing all the chang
 
 - API Call
 A function to call the poke
+
+## Credits
+
+Pokemon API 
+
+<a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by amoghdesign - Flaticon</a>
+
+Game Background: https://www.reddit.com/r/pokemon/comments/1gdlts/i_made_you_guys_a_background/

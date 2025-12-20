@@ -6,16 +6,50 @@ import unovaMap from "./assets/images/regions/unovaMap.png"
 import kalosMap from "./assets/images/regions/kalosMap.png"
 import alohaMap from "./assets/images/regions/alohaMap.png"
 import galarMap from "./assets/images/regions/galarMap.png"
+import hisunMap from "./assets/images/regions/hisuiMap.png"
+import paldeaMap from "./assets/images/regions/paldeaMap.png"
 
-const regions: { [key: string]: string } = {
-    "Kanto": kantoMap,
-    "Johto": johtoMap,
-    "Hoenn": hoennMap,
-    "Sinnoh": sinnohMap,
-    "Unova": unovaMap,
-    "Kalos": kalosMap,
-    "Aloha": alohaMap,
-    "Galar": galarMap
+const regions: { [key: string]: { map: string, id: number } } = {
+    Kanto: {
+        map: kantoMap,
+        id: 1
+    },
+    Johto: {
+        map: johtoMap,
+        id: 2
+    },
+    Hoenn: {
+        map: hoennMap,
+        id: 3
+    },
+    Sinnoh: {
+        map: sinnohMap,
+        id: 4
+    },
+    Unova: {
+        map: unovaMap,
+        id: 5
+    },
+    Kalos: {
+        map: kalosMap,
+        id: 6
+    },
+    Aloha: {
+        map: alohaMap,
+        id: 7
+    },
+    Galar: {
+        map: galarMap,
+        id: 8
+    },
+    Hisun: {
+        map: hisunMap,
+        id: 9
+    },
+    Paldea: {
+        map: paldeaMap,
+        id: 10
+    }
 };
 
 enum CurrentPage {

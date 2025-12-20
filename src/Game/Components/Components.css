@@ -1,5 +1,6 @@
 
 .region-block{
+    position: relative;
     align-items: center;
 }
 
@@ -13,6 +14,21 @@
     background-color: var(--background-color);
     padding: 0px 10px;
     margin-top: 10px;
+}
+
+.checkmark::before {
+    display: block;
+    content: "";
+    background-image: url("./../../assets/images/pokeball-icon.png");
+    position: absolute; 
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    right: 5px;
+    top: -15px;
+    rotate: calc(30deg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Gradient Button CSS */
