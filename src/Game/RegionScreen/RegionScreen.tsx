@@ -1,9 +1,21 @@
 import "./RegionScreen.css"
 import { StartButton } from "../Components/StartButton";
 import Region from "../Components/Region";
-import { regions } from "../../global";
+import { CurrentPage, regions } from "../../global";
 
-export function RegionScreen({ setSelectedRegions }) {
+export function RegionScreen({ setPage, setSelectedRegions }) {
+
+    function handleRegionSelect(e: React.MouseEvent<HTMLButtonElement>) {
+
+        const parent = e.currentTarget.parentElement?.parentElement;
+        if (!parent) return;
+        parent.classList.add("fade-out");
+
+        setTimeout(() => {
+            setPage(CurrentPage.GAME_SCREEN)
+        }, 200);
+    }
+
     return (
         <div id="region_screen" className="fade-in"> 
             <h1>Pick your regions</h1>
@@ -14,7 +26,7 @@ export function RegionScreen({ setSelectedRegions }) {
                 ))}
             </div>
             <div>
-                <StartButton />
+                <StartButton onClick={handleRegionSelect} />
             </div>
         </div>
     );
