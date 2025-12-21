@@ -6,12 +6,8 @@ import { GameScreen } from "./GameScreen/GameScreen.tsx";
 
 export function Game(){
 
-    let [currentPage, setPage] = useState(CurrentPage.REGION_SCREEN);
+    let [currentPage, setPage] = useState(CurrentPage.START_SCREEN);
     let [selectedRegions, setSelectedRegions] = useState([])
-
-    if (currentPage === CurrentPage.GAME_SCREEN) {
-        // Game screen logic would go here
-    }
 
     return (
         <>

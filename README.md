@@ -1,46 +1,53 @@
-# Architecture
+# Pokémon Memory Game
 
-## Start Screen
+A modern, interactive memory card game built with React and TypeScript, featuring Pokémon from various regions. Players select their favorite Pokémon regions and test their memory skills by matching cards in this engaging web application.
 
-A place to start the screen. Players can pick from different regions to play in.
+## 🎮 Project Overview
 
-All the regions are available at: 
-https://pokeapi.co/api/v2/region
+This project is a memory card game that combines classic gameplay mechanics with the beloved Pokémon universe. The game integrates with the PokéAPI to dynamically fetch Pokémon data, sprites, and sound effects, creating an immersive and personalized gaming experience.
 
-region.pokedexes[0].url
+### Key Features (Planned/In Development)
 
-We can get id's of pokemon from a given region from the region's pokedex.
-https://pokeapi.co/api/v2/pokedex/{id}/
+- **Region Selection**: Choose from multiple Pokémon regions (Kanto, Johto, Hoenn, Sinnoh, Unova, Kalos, Alola, Galar, Hisui, and Paldea)
+- **Dynamic Content Loading**: Fetches Pokémon data, sprites, and audio from the PokéAPI
+- **Memory Game Mechanics**: Classic card matching gameplay with Pokémon-themed cards
+- **Responsive Design**: Modern UI with smooth animations and transitions
+- **Audio Integration**: Plays Pokémon cry sounds for enhanced gameplay experience
+- **Smart Data Fetching**: Efficiently handles API requests with fallback mechanisms for missing sprites
 
-Lastly, we get information about the pokemon:
-https://pokeapi.co/api/v2/pokemon/{id or name}/
+## 🛠️ Tech Stack
 
-sprites = pokemon.sprites
-sprite = sprites.other.dream_world.front_default
+- **React 19** - Modern React with hooks for state management
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and development server
+- **CSS3** - Custom styling with animations
+- **PokéAPI** - RESTful API for Pokémon data
+- **ESLint** - Code quality and consistency
 
-## Game Manager
+## 🏗️ Architecture
 
-This is responsible for managing the logic for the game. It calls the API for images and passes it to the Game component to update the memory cards.
+The application follows a component-based architecture with clear separation of concerns:
 
-## Game
+- **Start Screen**: Initial landing page with game introduction
+- **Region Screen**: Interactive region selection interface
+- **Game Screen**: Main gameplay area with card grid and game logic
+- **API Integration**: Robust data fetching with error handling and fallbacks
+- **Utility Functions**: Reusable helpers for data processing and audio playback
 
-This displays the game to the user. It is responsible for managing all the changes across the DOM
+## 🎯 Learning Objectives
 
-## Components
+This project demonstrates:
 
-- Card Model
-- Timer Component
-- Header
+- React Hooks (useState, useEffect) for state management
+- API integration and async data handling
+- TypeScript for type safety
+- Component composition and reusability
+- Modern CSS animations and transitions
+- Error handling and fallback strategies
+- Performance optimization through efficient data fetching
 
-## Utility Functions
+## 🙏 Credits
 
-- API Call
-A function to call the poke
-
-## Credits
-
-Pokemon API 
-
-<a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by amoghdesign - Flaticon</a>
-
-Game Background: https://www.reddit.com/r/pokemon/comments/1gdlts/i_made_you_guys_a_background/
+- **Pokémon Data**: [PokéAPI](https://pokeapi.co/)
+- **Pokémon Icons**: [Flaticon - amoghdesign](https://www.flaticon.com/free-icons/pokemon)
+- **Game Background**: [Reddit Community](https://www.reddit.com/r/pokemon/comments/1gdlts/i_made_you_guys_a_background/)
