@@ -1,6 +1,6 @@
 # Pokémon Memory Game
 
-A modern, interactive memory card game built with React and TypeScript, featuring Pokémon from various regions. Players select their favorite Pokémon regions and test their memory skills by matching cards in this engaging web application.
+A modern, interactive memory card game built with React and TypeScript, featuring Pokémon from various regions. Players select their favorite Pokémon regions and test their memory skills by choosing a previously not selected card every round in this engaging web application.
 
 ## 🎮 Project Overview
 
