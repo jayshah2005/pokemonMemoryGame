@@ -30,7 +30,13 @@ export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
     };
   }, [selectedRegions]);
 
-  if (loading) return <img src="https://i.imgur.com/MkhYjXB.gif" alt="" />;
+  if (loading) return (
+    <div className="loading">
+      <img src="https://i.imgur.com/MkhYjXB.gif" alt="" />
+      <h1 className="loader"></h1>
+    </div>
+  );
+
   if (error) 
     return (
       <div className="error">
