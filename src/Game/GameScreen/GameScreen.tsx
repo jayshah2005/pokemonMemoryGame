@@ -1,6 +1,6 @@
-// src/Screens/GameScreen/GameScreen.tsx
 import { useEffect, useState } from "react";
 import { get20PokemonFromRegions, playCry, PokemonCard } from "../api/pokeapi";
+import "./GameScreen.css";
 
 export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
   const [cards, setCards] = useState<PokemonCard[]>([]);
@@ -30,9 +30,15 @@ export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
     };
   }, [selectedRegions]);
 
-  if (loading) return <div>Loading 20 Pokémon...</div>;
-  if (error) return <div>Error: {error}</div>;
-
+  if (loading) return <img src="https://i.imgur.com/MkhYjXB.gif" alt="" />;
+  if (error) 
+    return (
+      <div className="error">
+        <h1>Error: Please reload the page and start over</h1>
+        <img src="https://media.tenor.com/b5_GZ8tV6oEAAAAi/pikachu-pokemon.gif" alt="" />
+      </div>
+    );
+  
   return (
     <div>
       <h2>Loaded {cards.length} Pokémon</h2>
