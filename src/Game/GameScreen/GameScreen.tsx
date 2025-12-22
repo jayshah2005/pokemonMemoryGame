@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { get20PokemonFromRegions, playCry, PokemonCard } from "../api/pokeapi";
+import { getPokemonFromRegions, playCry, PokemonCard } from "../api/pokeapi";
 import "./GameScreen.css";
 
 export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
@@ -15,7 +15,7 @@ export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
         setLoading(true);
         setError(null);
 
-        const result = await get20PokemonFromRegions(selectedRegions);
+        const result = await getPokemonFromRegions(selectedRegions, 10);
 
         if (!cancelled) setCards(result);
       } catch (e: any) {

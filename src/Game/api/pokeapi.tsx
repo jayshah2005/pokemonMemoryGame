@@ -100,7 +100,8 @@ function sample<T>(arr: T[], n: number): T[] {
  * 4) Randomly sample 20 names
  * 5) Fetch /pokemon/{name} for those 20 -> map to PokemonCard (sprite + cry)
  */
-export async function get20PokemonFromRegions(regionIds: number[]): Promise<PokemonCard[]> {
+export async function getPokemonFromRegions(regionIds: number[], numPokemon: number): Promise<PokemonCard[]> {
+
   if (!regionIds.length) return [];
 
   // 1) Get regions, extract first pokedex url per region
@@ -123,10 +124,10 @@ export async function get20PokemonFromRegions(regionIds: number[]): Promise<Poke
   const uniqueNames = Array.from(new Set(allNames));
 
   // If user picked tiny regions / edge cases, take min(20, total)
-  const pickedNames = sample(uniqueNames, Math.min(20, uniqueNames.length));
+  const pickedNames = sample(uniqueNames, Math.min(numPokemon, uniqueNames.length));
 
   // 4) Fetch the 20 Pokémon details
-  const pokemonList = await fetchUntilCount(uniqueNames, 20);
+  const pokemonList = await fetchUntilCount(uniqueNames, numPokemon);
 
   // 5) Map to what your UI needs
   return pokemonList.map((p) => ({
