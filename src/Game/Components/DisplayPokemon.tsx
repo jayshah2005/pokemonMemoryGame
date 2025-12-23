@@ -1,7 +1,6 @@
 import { playCry } from "../api/pokeapi";
 import Tilt from "react-parallax-tilt";
 import { GameStaus } from "../../global";
-import { log } from "node:console";
 
 export function DisplayPokemon({ pokemon, setPokemon, selectedPokemon, setSelectedPokemon, gameStatus, setGameStatus }: { pokemon: any; setPokemon : any, selectedPokemon: any; setSelectedPokemon: any, gameStatus: any; setGameStatus: any }) {
 
