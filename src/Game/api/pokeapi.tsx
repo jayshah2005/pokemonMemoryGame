@@ -169,7 +169,7 @@ async function fetchUntilCount(
 export function playCry(url: string | null) {
   if (!url) return;
   const audio = new Audio(url);
-  audio.volume = 0.6;
+  audio.volume = 0.1;
   audio.play().catch(() => {
     // Some browsers require a user gesture; handle silently
   });

@@ -1,10 +1,10 @@
 import "./Components.css"
 import pokeballImg from "../../assets/images/pokeball.png"
 
-export function StartButton({ onClick }) {
+export function Button({ text="Start Game", onClick }) {
     return (
         <button className="btn-grad" onClick={onClick}>
-            Start Game
+            {text}
             <img src={pokeballImg} className="btn-img"/>
         </button>
     )

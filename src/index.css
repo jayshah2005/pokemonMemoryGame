@@ -1,6 +1,19 @@
+h1, h2, h3, h4, h5, h6, p, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
     --background-color: rgba(255, 255, 255, 0.8);
     --pokeball: url("/assets/cursors/pokeball") 4 4, pointer;
+}
+
+.box{
+    background-color: var(--background-color);
+    margin: 40px 0px;
+    padding: 10px 20px;
+    border: 2px solid black;
 }
 
 .fade-in {

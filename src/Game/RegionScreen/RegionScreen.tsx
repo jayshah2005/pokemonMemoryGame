@@ -1,5 +1,5 @@
 import "./RegionScreen.css"
-import { StartButton } from "../Components/StartButton";
+import { Button } from "../Components/Button";
 import Region from "../Components/Region";
 import { CurrentPage, regions } from "../../global";
 
@@ -26,7 +26,7 @@ export function RegionScreen({ setPage, setSelectedRegions }) {
                 ))}
             </div>
             <div>
-                <StartButton onClick={handleRegionSelect} />
+                <Button onClick={handleRegionSelect} text="Start Game" />
             </div>
         </div>
     );

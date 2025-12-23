@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import { getPokemonFromRegions, playCry, PokemonCard } from "../api/pokeapi";
+import { GameStaus } from "../../global";
+import { getPokemonFromRegions, PokemonCard } from "../api/pokeapi";
+import { DisplayPokemon } from "../Components/DisplayPokemon";
 import "./GameScreen.css";
 
-export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
+export function GameScreen({ selectedRegions, gameStatus, setGameStatus }: { selectedRegions: number[]; gameStatus: any; setGameStatus: any }) {
   const [cards, setCards] = useState<PokemonCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [selectedPokemon, setSelectedPokemon] = useState<number[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -15,7 +18,7 @@ export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
         setLoading(true);
         setError(null);
 
-        const result = await getPokemonFromRegions(selectedRegions, 10);
+        const result = await getPokemonFromRegions([1], 10);
 
         if (!cancelled) setCards(result);
       } catch (e: any) {
@@ -46,26 +49,19 @@ export function GameScreen({ selectedRegions }: { selectedRegions: number[] }) {
     );
   
   return (
-    <div>
-      <h2>Loaded {cards.length} Pokémon</h2>
-
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
-        {cards.map((c) => (
-          <div key={c.id} style={{ border: "1px solid #ddd", padding: 10, borderRadius: 10 }}>
-            {c.sprite ? (
-              <img src={c.sprite} alt={c.name} style={{ width: 90, height: 90 }} />
-            ) : (
-              <div style={{ width: 90, height: 90 }}>No sprite</div>
-            )}
-
-            <div style={{ marginTop: 6, fontWeight: 600 }}>{c.name}</div>
-
-            <button style={{ marginTop: 8 }} onClick={() => playCry(c.cryUrl)}>
-              Play cry
-            </button>
+    <div id="game-screen">
+        <header>
+          <div className="left box">
+            <h1>Catch 'em all</h1>
+            <p>Pick a Pokémon</p>
           </div>
-        ))}
-      </div>
+          <div className="right box">
+            <h1>{selectedPokemon.length}</h1>
+            <p>Pokémon Caught</p>
+          </div>
+        </header>
+
+      <DisplayPokemon pokemon={cards} setPokemon={setCards} selectedPokemon={selectedPokemon} setSelectedPokemon={setSelectedPokemon} gameStatus={gameStatus} setGameStatus={setGameStatus}></DisplayPokemon>
     </div>
   );
 }

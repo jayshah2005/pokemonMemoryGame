@@ -59,4 +59,10 @@ enum CurrentPage {
     END_SCREEN
 }
 
-export { CurrentPage, regions };
+enum GameStaus {
+    NOT_DETERMINED,
+    WON,
+    LOST
+}
+
+export { CurrentPage, GameStaus, regions };
