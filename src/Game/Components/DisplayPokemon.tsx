@@ -14,12 +14,12 @@ export function DisplayPokemon({ pokemon, setPokemon, selectedPokemon, setSelect
         {pokemon.map((c) => (
           <Tilt
           tiltReverse
-          reset
-          glareEnable={pokemon.shiny || true}
+          reset={true}
+          glareEnable={pokemon.shiny ? true : false}
           glareMaxOpacity={0.4}
           glareColor={pokemon.shiny ? "#f1b818" : "#fff"}
           glarePosition="all"
-          key={c.id}
+          key={c.id + Math.random()}
           >
             <div onClick={(e) => handlePokemonClick(e, c)}>
             
@@ -50,6 +50,7 @@ export function DisplayPokemon({ pokemon, setPokemon, selectedPokemon, setSelect
   }
 
   function shuffle(array) {
+    
     // Iterate over the array in reverse order
     for (let i = array.length - 1; i > 0; i--) {
       // Generate Random Index
