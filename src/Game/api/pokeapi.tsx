@@ -91,7 +91,7 @@ function sample<T>(arr: T[], n: number): T[] {
 
 /**
  * MAIN FUNCTION YOU ASKED FOR:
- * Returns exactly 20 Pokémon total, selected from ALL chosen regions combined.
+ * Returns exactly numPokemon Pokémon total, selected from ALL chosen regions combined.
  *
  * Steps:
  * 1) For each selected region -> fetch region -> take region.pokedexes[0].url
@@ -163,7 +163,6 @@ async function fetchUntilCount(
 
   return results;
 }
-
 
 /** Simple helper to play cry sound */
 export function playCry(url: string | null) {
