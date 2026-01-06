@@ -51,3 +51,4 @@ This project demonstrates:
 - **Pokémon Data**: [PokéAPI](https://pokeapi.co/)
 - **Pokémon Icons**: [Flaticon - amoghdesign](https://www.flaticon.com/free-icons/pokemon)
 - **Game Background**: [Reddit Community](https://www.reddit.com/r/pokemon/comments/1gdlts/i_made_you_guys_a_background/)
+- **Background Music** [Khinsider](https://downloads.khinsider.com/game-soundtracks/album/pokemon-game-boy-pok-mon-sound-complete-set-play-cd)
