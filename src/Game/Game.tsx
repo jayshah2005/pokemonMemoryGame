@@ -5,8 +5,7 @@ import { RegionScreen } from "./RegionScreen/RegionScreen";
 import { GameScreen } from "./GameScreen/GameScreen.tsx";
 import { WinModel } from "./Model/WinModel.tsx";
 import { LoseModel } from "./Model/LoseModel.tsx";
-import {Audio} from "./Components/MusicButtons.tsx"
-import backgroundSound from "./../assets/sounds/themeOfPalletTown.mp3"
+import { Audio } from "./Components/AudioManger.tsx";
 
 export function Game(){
 
@@ -17,8 +16,7 @@ export function Game(){
     return (
         <>
             <div id="Game">
-                {/* <Audio backgroundSound={backgroundSound} /> */}
-
+                <Audio></Audio>
                 {page === CurrentPage.START_SCREEN && <StartScreen setPage={setPage}></StartScreen>}
                 {page === CurrentPage.REGION_SCREEN && <RegionScreen setPage={setPage} setSelectedRegions={setSelectedRegions}></RegionScreen>}
                 {page === CurrentPage.GAME_SCREEN && <GameScreen selectedRegions={selectedRegions} gameStatus={gameStatus} setGameStatus={setGameStatus}></GameScreen>}
