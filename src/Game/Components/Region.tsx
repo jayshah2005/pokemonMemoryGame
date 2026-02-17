@@ -26,7 +26,7 @@ export default function Region({
 
   return (
     <div className="region-block" onClick={handleClick}>
-      <img src={regionInfo.map} alt={regionName} />
+      <img src={regionInfo.map} alt={regionName} data-testid={"region-" + regionInfo.id} />
       <p>{regionName} Region</p>
     </div>
   );

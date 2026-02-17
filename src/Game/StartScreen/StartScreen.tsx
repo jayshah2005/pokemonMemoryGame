@@ -6,6 +6,7 @@ export function StartScreen({ setPage }){
     return(
         <div 
             id="start_screen" 
+            data-testid="start-screen"
             onClick={handleClick}
             >
             <div id="pokemonHeaderDiv">

@@ -17,16 +17,25 @@ export function RegionScreen({ setPage, setSelectedRegions }) {
     }
 
     return (
-        <div id="region_screen" className="fade-in"> 
+        <div 
+            id="region_screen" 
+            className="fade-in"
+            data-testid="region-screen"
+        > 
             <h1>Pick your regions</h1>
             <div id="regions">
 
                 {Object.keys(regions).map((key) => (
-                    <Region key={key} regionName={key} regionInfo={regions[key]} setSelectedRegion={setSelectedRegions}/>
+                    <Region 
+                        key={key}
+                        regionName={key} 
+                        regionInfo={regions[key]} 
+                        setSelectedRegion={setSelectedRegions}
+                    />
                 ))}
             </div>
             <div>
-                <Button onClick={handleRegionSelect} text="Start Game" />
+                <Button onClick={handleRegionSelect} text="Start Game" data-testid="start-game-button" />
             </div>
         </div>
     );

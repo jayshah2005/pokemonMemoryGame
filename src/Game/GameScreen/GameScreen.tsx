@@ -49,7 +49,10 @@ export function GameScreen({ selectedRegions, gameStatus, setGameStatus }: { sel
     );
   
   return (
-    <div id="game-screen">
+    <div 
+      id="game-screen"
+      data-testid="game-screen"
+    >
         <header>
           <div className="left box">
             <h1>Catch 'em all</h1>

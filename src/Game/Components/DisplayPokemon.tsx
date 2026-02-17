@@ -15,7 +15,9 @@ export function DisplayPokemon({ pokemon, setPokemon, selectedPokemon, setSelect
 
   return (
 
-    <div id="pokemon-grid">
+    <div 
+      id="pokemon-grid"
+    >
         {pokemon.map((c) => (
           <Tilt
           tiltReverse
