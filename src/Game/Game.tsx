@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import { CurrentPage, GameStaus } from "../global";
 import { StartScreen } from "./StartScreen/StartScreen";
 import { RegionScreen } from "./RegionScreen/RegionScreen";
